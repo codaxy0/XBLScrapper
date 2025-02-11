@@ -66,5 +66,3 @@ class Logging:
 """,
             Style.RESET_ALL,
         )
-
-Logging.print_banner()
