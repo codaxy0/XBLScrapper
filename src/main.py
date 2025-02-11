@@ -72,10 +72,11 @@ class XBLScrapper:
             data = response.json()
             return self.__get_friends_gamertag(data)
         except requests.exceptions.RequestException as e:
-            if e.response is not None and e.response.status_code == 429:
-                return RateLimited
-            if e.response is not None and e.response.status_code == 403:
-                return None
+            if e.response is not None:
+                if e.response.status_code == 429:
+                    return RateLimited
+                if e.response.status_code == 403:
+                    return None
 
             self.logger.error(f"Error retrieving friends for {gamertag}: {e}")
             return None
