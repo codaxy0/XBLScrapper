@@ -16,7 +16,11 @@ cd /path/to/XBLScrapper
 ```bash
 poetry install
 ```
-3. Run the script with:
+3. Before running the script, rename .env.example to .env and add your API key from [xbl.io](https://xbl.io/). This key is required for accessing Xbox Live data.
+```bash
+mv .env.example .env
+```
+4. Run the script with:
 ```bash
 poetry run python src/main.py
 ```
